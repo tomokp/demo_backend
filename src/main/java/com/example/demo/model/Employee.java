@@ -21,4 +21,10 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+
+    public void setFirstName(String firstname) { this.firstName = firstname; }
+
+    public void setLastName(String lastname) { this.lastName = lastname; }
+
+    public void setEmail(String email) { this.email = email; }
 }

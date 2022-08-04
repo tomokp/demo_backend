@@ -20,6 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee saveEmployee(Employee employee) {
+        System.out.println(employee);
         return employeeRepository.save(employee);
     }
 
@@ -49,6 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         existingEmployee.setEmail(employee.getEmail());
         //save existing employee to DataBase
         employeeRepository.save(existingEmployee);
+        System.out.println("update!");
         return  existingEmployee;
     }
 
