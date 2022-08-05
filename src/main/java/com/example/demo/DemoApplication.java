@@ -22,20 +22,4 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(){
-		return args -> {
-			int max = 10;
-			Faker faker = new Faker(new Locale("en-US"));
-
-			for(int i = 0; i < max ; i++){
-				Employee employee = new Employee();
-				employee.setFirstName(faker.name().firstName());
-				employee.setLastName(faker.name().lastName());
-				employee.setEmail(faker.internet().safeEmailAddress());
-				employeeService.saveEmployee(employee);
-			}
-		};
-	}
-
 }

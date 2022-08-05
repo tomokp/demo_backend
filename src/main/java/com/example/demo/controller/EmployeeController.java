@@ -52,9 +52,14 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employeeService.deleteEmployee(employeeId), HttpStatus.OK);
     }
 
-    @DeleteMapping
+    @DeleteMapping()
     public void deleteEmployees() {
         employeeService.deleteEmployees();
+    }
+
+    @PostMapping("{amount}")
+    public List<Employee> generateEmployees(@PathVariable("amount") int amount) {
+        return employeeService.generateEmployees(amount);
 
     }
 }
