@@ -79,9 +79,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             Employee employee = new Employee();
             employee.setFirstName(faker.name().firstName());
             employee.setLastName(faker.name().lastName());
-            employee.setEmail(faker.internet().safeEmailAddress());
-//            employeeService.saveEmployee(employee);
-//            employeeRepository.save(employee);
+            employee.setEmail(faker.internet().emailAddress());
             generatedEmployees.add(employee);
 
         }
